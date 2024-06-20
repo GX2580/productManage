@@ -8,6 +8,9 @@
       <ul>
         <li><RouterLink to="/ProductManage">Product Management</RouterLink></li>
         <li><RouterLink to="AddingGoods">Adding Goods</RouterLink></li>
+        <li>
+          <RouterLink to="UserRegistrationView">User Registration</RouterLink>
+        </li>
       </ul>
     </aside>
     <main class="container">

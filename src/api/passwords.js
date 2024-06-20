@@ -9,11 +9,11 @@ export const getPasswordApi = () => {
 }
 
 //注册密码
-export const createPasswordApi = (password) => {
+export const createPasswordApi = (data) => {
   return instance({
     url: '/passwords',
     method: 'post',
-    password,
+    data,
   })
 }
 

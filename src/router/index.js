@@ -30,6 +30,11 @@ const router = createRouter({
           name: 'ProductManage',
           component: () => import('../views/admin/ProductManageView.vue'),
         },
+        {
+          path: 'UserRegistrationView',
+          name: 'UserRegistrationView',
+          component: () => import('../views/admin/UserRegistrationView.vue'),
+        },
       ],
     },
     {

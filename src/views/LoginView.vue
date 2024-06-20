@@ -42,11 +42,11 @@ const login = async () => {
   errorMessage.value = ''
   try {
     const response = await getPasswordApi()
-    const passwords = response // 假设返回的数据中包含密码数组
+    const passwords = response
 
     const user = passwords.find(
       (p) =>
-        p.name === username.value && p.password === parseInt(password.value, 10)
+        p.name === username.value && p.password.toString() === password.value
     )
 
     if (user) {
