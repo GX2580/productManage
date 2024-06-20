@@ -1,6 +1,7 @@
 <template>
   <div class="top-menu">
-    <span>Top Menu</span><button @click="logout">Exit</button>
+    <span>Top Menu</span>
+    <button @click="logout">Exit</button>
   </div>
   <div class="bottom">
     <aside class="sidebar">
@@ -29,7 +30,6 @@ const logout = () => {
 /* 顶部菜单样式 */
 .top-menu {
   border-bottom: 1px solid #ccc; /* 使用更轻的颜色以减少视觉干扰 */
-  text-align: right;
   padding: 10px 20px; /* 增加左右内边距 */
   position: fixed;
   top: 0;
@@ -37,17 +37,19 @@ const logout = () => {
   z-index: 1000;
   width: 100%;
   background-color: #f8f9fa; /* 添加背景色 */
+  display: flex; /* 使用 flexbox 布局 */
+  justify-content: right; /* 使内容分布在两端 */
+  align-items: center; /* 垂直居中 */
 }
 
 .top-menu span {
-  margin-right: auto; /* 使用 auto 使其自动占据剩余空间 */
   font-weight: bold; /* 增加字体粗细 */
+  margin-right: 43%;
 }
 
 .top-menu button {
   border-radius: 35%;
   padding: 5px 15px; /* 调整内边距以更好地匹配按钮尺寸 */
-  margin-right: 10px;
   border: 1px solid #ccc; /* 添加边框 */
   background-color: #fff; /* 添加背景色 */
   cursor: pointer; /* 添加鼠标指针样式 */

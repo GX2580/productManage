@@ -50,6 +50,7 @@ body {
 
 .main {
   text-align: center;
+  background-color: #000;
 }
 
 .warning-title {

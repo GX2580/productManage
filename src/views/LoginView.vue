@@ -1,19 +1,26 @@
 <template>
   <div class="login">
-    登陆页面
+    <h2>登陆页面</h2>
     <form @submit.prevent="login">
-      <div>
-        用户名: <input type="text" v-model="username" autocomplete="username" />
-      </div>
-      <div>
-        密码:
+      <div class="form-group">
+        <label for="username">用户名:</label>
         <input
+          id="username"
+          type="text"
+          v-model="username"
+          autocomplete="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">密码:</label>
+        <input
+          id="password"
           type="password"
           v-model="password"
           autocomplete="current-password"
         />
       </div>
-      <button type="submit">登录</button>
+      <button type="submit" class="login-button">登录</button>
     </form>
   </div>
 </template>
@@ -40,6 +47,57 @@ const login = async () => {
 
 <style scoped>
 .login {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
 }
 </style>
