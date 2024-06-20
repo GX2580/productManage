@@ -31,6 +31,11 @@ const router = useRouter()
 const productStore = useProductStore()
 
 const addProduct = async () => {
+  if (!id.value) {
+    alert('ID不可为空')
+    return
+  }
+
   await productStore.addProduct({
     id: id.value,
     name: productname.value,
