@@ -1,16 +1,26 @@
 <template>
   <div class="form-container">
-    <label>
-      Username:
-      <input type="text" v-model="username" />
-    </label>
-    <br />
-    <label>
-      Password:
-      <input type="password" v-model="password" />
-    </label>
-    <br />
-    <button @click="registerUser">Register</button>
+    <form @submit.prevent="registerUser">
+      <label>
+        Username:
+        <input
+          type="text"
+          v-model="username"
+          autocomplete="username"
+          placeholder="Enter your username"
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          v-model="password"
+          autocomplete="current-password"
+          placeholder="Enter your password"
+        />
+      </label>
+      <button type="submit">Register</button>
+    </form>
   </div>
 </template>
 
@@ -24,6 +34,11 @@ const password = ref('')
 const router = useRouter()
 
 const registerUser = async () => {
+  if (!username.value || !password.value) {
+    alert('Username and password are required.')
+    return
+  }
+
   try {
     const data = {
       name: username.value,
@@ -37,6 +52,7 @@ const registerUser = async () => {
   }
 }
 </script>
+
 <style scoped>
 .form-container {
   display: flex;
@@ -52,17 +68,18 @@ const registerUser = async () => {
 }
 
 label {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 input[type='text'],
 input[type='password'] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -78,6 +95,7 @@ button {
   border-radius: 4px;
   transition: background-color 0.3s;
   margin-top: 20px;
+  width: 100%;
 }
 
 button:hover {
